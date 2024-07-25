@@ -88,6 +88,7 @@ body {
 
 .testimonials p{
   color: var(--light-gray-magenta);
+  font-weight: 100;
 }
 
 .testimonials .profile1,
@@ -240,6 +241,5 @@ body {
 
   .testimonials p {
     line-height: 20px;
-    font-weight: 100;
   }
 }
