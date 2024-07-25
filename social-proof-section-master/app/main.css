@@ -28,7 +28,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: clamp(450px, 90%, 1100px);
+  max-width: 1100px;
   margin: 50px 30px;
   line-height: 25px;
 }
@@ -52,22 +52,28 @@ body {
 .product-rating .heading p {
   color: var(--dark-gray-magenta);
   margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
-.rating {
-  background-color: var(--light-gray-magenta);
+.star-rating-container {
   width: 100%;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 8px;
 }
 
-.rating img {
+.rating1,
+.rating2,
+.rating3 {
+  background-color: var(--light-gray-magenta);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 8px;
+}
+
+.star-rating-container img {
   height: 14px;
   width: 14px;
 }
 
-.rating p {
+.star-rating-container p {
   color: var(--very-dark-magenta);
   font-size: 1.1rem;
   font-weight: 600;
@@ -80,7 +86,13 @@ body {
   justify-content: center;
 }
 
-.testimonials .profile {
+.testimonials p{
+  color: var(--light-gray-magenta);
+}
+
+.testimonials .profile1,
+.testimonials .profile2,
+.testimonials .profile3 {
   background-color: var(--very-dark-magenta);
   border-radius: 10px;
   padding: 25px;
@@ -89,8 +101,11 @@ body {
   transition: transform 0.3s ease;
 }
 
-.testimonials .profile:hover {
+.testimonials .profile1:hover,
+.testimonials .profile2:hover,
+.testimonials .profile3:hover {
   transform: translateY(-20px);
+  transition: transform 0.3s ease;
 }
 
 .testimonials img {
@@ -111,4 +126,120 @@ body {
 .wrapper .profile-name h4 {
   color: var(--soft-pink);
   font-weight: 400;
+}
+
+@media(min-width: 650px) {
+  .testimonials {
+    flex-direction: row;
+    align-items: start;
+    gap: 20px;
+  }
+
+  .testimonials .profile2 {
+    margin-top: 20px;
+  }
+
+  .testimonials .profile3 {
+    margin-top: 40px;
+  }
+
+  .star-rating-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .product-rating h1 {
+    font-size: 3rem;
+    line-height: 40px;
+    margin: 0 50px;
+    margin-bottom: 20px;
+  }
+
+  .product-rating .heading p {
+    padding: 0 80px;
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+  }
+}
+
+@media(min-width: 900px) {
+  .product-rating .heading h1 {
+    font-size: 3.2rem;
+    line-height: 50px;
+    margin: 0 100px;
+  }
+
+  .product-rating .heading p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+} 
+
+@media(min-width: 1200px) {
+  .testimonials {
+    margin-top: 50px;
+  }
+
+  .product-rating{
+    flex-direction: row;
+    text-align: start;
+    gap: 80px;
+  }
+
+  .product-rating .heading h1 {
+    padding: 0;
+    margin: 0;
+    max-width: 400px;
+    line-height: 45px;
+    font-size: 3.5rem;
+  }
+
+  .product-rating .heading p {
+    margin: 25px 50px 0 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .star-rating-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .star-rating-container .rating1,
+  .star-rating-container .rating2,
+  .star-rating-container .rating3 {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding-left: 26px;
+    gap: 20px;
+    max-width: 420px;
+    transition: transform ease-in-out 0.3s;
+  }
+
+  .star-rating-container .rating2 {
+    margin-left: 45px;
+  }
+
+  .star-rating-container .rating3 {
+    margin-left: 90px;
+  }
+
+  .star-rating-container .rating1:hover,
+  .star-rating-container .rating2:hover,
+  .star-rating-container .rating3:hover {
+    transform: translateX(-45px);
+    transition: ease-in-out 0.3s;
+  }
+
+  .star-rating-container p {
+    font-size: 1rem;
+  }
+
+  .testimonials p {
+    line-height: 20px;
+    font-weight: 100;
+  }
 }
